@@ -1,14 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>TITLE:</strong>
   <%= @post.title %>
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>BODY:</strong>
   <%= markdown @post.body %>
 </p>
+
+<p>
+  <strong>TAGS:</strong>
+  <%= @post.tag_list.join(' ').upcase %>
+</p>
+
 
 <%= render 'comments/comment' %>
 

@@ -27,3 +27,17 @@ span#heart-img {
   height:40px;
   margin-right: 80px;
 }
+
+#tag_cloud {
+  width:400px;
+  line-height: 1.6em;
+  .s { font-size: 0.8;
+  color:red;
+  }
+  .m { font-size: 1.4;
+  color:yellow;
+  }
+  .l { font-size: 2.0;
+  color:green;
+  } 
+}
