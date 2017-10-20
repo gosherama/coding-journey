@@ -1,0 +1,15 @@
+<h2>Comments</h2>  
+<% @comments.each do |comment| %>  
+  <p>  
+    <strong>Commenter:</strong>  
+    <%= comment.commenter %>  
+  </p>  
+   
+  <p>  
+    <strong>Comment:</strong>  
+    <%= markdown(comment.body) %>  
+  </p>  
+<% end %>  
+
+
+<%= render 'comments/form' %>

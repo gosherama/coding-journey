@@ -1,0 +1,29 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//FOOTER STYLING
+//
+footer {
+  height: 200px;
+  margin-top:100px;
+}
+
+//FOOTER -- ICONS
+span#heart-img { 
+  padding: 7px;
+}
+#heart-img img {
+  width: 30px;
+  height:30px;
+}
+#ruby-logo img {
+  width: 60px;
+  height:60px;
+}
+.social-media img {
+  width: 40px;
+  height:40px;
+  margin-right: 80px;
+}
