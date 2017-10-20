@@ -3,8 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+//TAGS STYLING
+#tag_cloud .sm {
+  width:400px;
+  line-height: 1.6em;
+  font-size: 1em;
+  color:#b71c1c;
+  text-decoration: none;
+  font-weigh:bold;
+  }
+#tag_cloud .me {
+  width:400px;
+  line-height: 1.6em;
+  font-size: 1.6em;
+  color:#ffd600;
+  text-decoration: none;
+  }
+#tag_cloud .lg {
+  width:400px;
+  line-height: 1.6em;
+  font-size: 2.4em;
+  color:#5c6bc0;
+  text-decoration: none;
+  }
+#tag_cloud .xl {
+  width:400px;
+  line-height: 1.6em;
+  font-size: 2.8em;
+  font-weight:bold;
+  color:#dd2c00;
+  text-decoration: none;
+  }
+
 //FOOTER STYLING
-//
+
 footer {
   height: 200px;
   margin-top:100px;
@@ -28,16 +60,5 @@ span#heart-img {
   margin-right: 80px;
 }
 
-#tag_cloud {
-  width:400px;
-  line-height: 1.6em;
-  .s { font-size: 0.8;
-  color:red;
-  }
-  .m { font-size: 1.4;
-  color:yellow;
-  }
-  .l { font-size: 2.0;
-  color:green;
-  } 
-}
+
+

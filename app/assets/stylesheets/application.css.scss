@@ -14,3 +14,12 @@
  *= require_self
  */
 @import "bootstrap";
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+.btn-primary {
+  background-color: #448aff;
+  border-color: #448aff;
+}
