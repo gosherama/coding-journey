@@ -6,25 +6,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
 <body>
 <div class="container">
+ 
+<%= render 'layouts/header' %>
+
   <%= yield %>
-     
-<footer>
-  <div class="row">
-    <div class="col-md-6">
-      <p>Crafted with <span id='heart-img'><%= image_tag("001-heart.png") %></span> and <span id="ruby-logo"><%= image_tag("ruby.png")%></span> in Valbonne City.
-    </div>
-    <div class="col-md-6">
-    <span class="social-media"><%= image_tag("002-social-media.png")%></span>
-    <span class="social-media"><%= image_tag("003-linkedin.png")%></span>
-    <span class="social-media"><%= image_tag("001-github.png")%></span>
-    </div>
-  </div>
-</footer>
+
+<%= render 'layouts/footer' %>
      
 </div>   
 </body>

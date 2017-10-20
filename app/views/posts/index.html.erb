@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts Administration</h1>
-
 <div id="tag_cloud">
   <% tag_cloud Post.tag_counts, %W[sm me lg xl] do |tag, css_class| %>
   <%= link_to tag.name.upcase , tag_path(tag.name), class: css_class %>
   <% end %>
 </div>
+<br>
+  <%= link_to 'New Post', new_post_path, class:"btn btn-primary" %>
+<br>
 
-<%= link_to 'New Post', new_post_path, class:"btn btn-primary" %>
 <br>
 <br>
 <table class="table table-striped table-hover">
