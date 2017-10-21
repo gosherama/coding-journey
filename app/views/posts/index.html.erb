@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div id="tag_cloud">
   <% tag_cloud Post.tag_counts, %W[sm me lg xl] do |tag, css_class| %>
   <%= link_to tag.name.upcase , tag_path(tag.name), class: css_class %>

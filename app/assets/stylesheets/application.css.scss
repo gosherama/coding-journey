@@ -17,6 +17,16 @@
 
 body {
   font-family: 'Raleway', sans-serif;
+  background-color: #eeeeee;
+}
+
+p {
+  color:black;
+}
+
+
+h1 {
+  color:black;
 }
 //-----Nav bar styling---------------------//
 
@@ -28,8 +38,13 @@ body {
   padding: 20px;
 }
 
-.nav a,p{
+.nav a {
   color:#CFD8DC;
+  text-decoration: none;
+}
+p#tagline {
+  color:#CFD8DC;
+  text-decoration: none;
 }
 
 .nav .left-nav {

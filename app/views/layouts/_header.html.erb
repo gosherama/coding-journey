@@ -1,13 +1,18 @@
 <nav class="nav">
   <div class="left-nav">
     <i class="material-icons" id="icon-gesture">gesture</i>
-    <p>A coding Journey.....</p>
+   <p id="tagline"><%= link_to "A coding Journey....", root_path %></p>
   </div>
 
   <div class="right-nav">
-    <a href="#">Portfolio</a>
-    <a href="#">Sign In</a>
-    <a href="#">Sign Up</a>
+      <% if !current_user %>
+        <%= link_to "Portfolio", root_path %>
+        <%= link_to "Sign In", new_user_session_path %>
+        <%= link_to "Sign Up", new_user_registration_path %>
+      <% else %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% end %>
+    
 <!--    <ul>
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Me</a>
