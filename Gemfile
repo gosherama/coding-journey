@@ -17,6 +17,7 @@ gem 'jquery-rails'
 gem 'redcarpet'
 gem 'pygments.rb'
 gem 'acts-as-taggable-on', '~> 5.0'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
