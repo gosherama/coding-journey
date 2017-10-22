@@ -1,15 +1,19 @@
 <h2>Comments</h2>  
 <% @comments.each do |comment| %>  
-  <p>  
-    <strong>Commenter:</strong>  
-    <%= comment.commenter %>  
-  </p>  
-   
-  <p>  
-    <strong>Comment:</strong>  
-    <%= markdown(comment.body) %>  
-  </p>  
-<% end %>  
 
+<div class="row" id="commenter">
+ <div class="col-md-3" id="pencil">
+  <%= image_tag("speech-bubble.png")%><%= comment.commenter %> 
+ </div>
+<div class="col-md-9">
+  <strong>Comment:</strong>
+  <div id="comments">
+    <p><%= markdown(comment.body) %></p> 
+  </div>
+</div>
+</div>  
+
+
+<% end %>  
 
 <%= render 'comments/form' %>

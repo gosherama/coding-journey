@@ -1,21 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>TITLE:</strong>
-  <%= @post.title %>
-</p>
-
-<p> <strong>Created by:</strong><%= @post.user.email %> - <%= @post.created_at.strftime('%d/%m/%Y')%></p>
-
-<p>
-  <strong>BODY:</strong>
-  <%= markdown @post.body %>
-</p>
-
-<p>
-  <strong>TAGS:</strong>
-  <%= @post.tag_list.join(' ').upcase %>
-</p>
+<div class="row">
+  <div class="col-md-5" id="post-data">
+    <h2 id="post-title"><%= @post.title %></h2>
+    <h3 id="post-author"><%= image_tag("user.png")%><%= @post.user.email %></h3>
+    <h3 id="post-date"><%= image_tag("clock.png")%><%= @post.created_at.strftime('%d/%m/%Y')%></h3>
+    <h3 id="tags"><%= image_tag("settings.png")%><%= @post.tag_list.join(' ').upcase %></h3>
+  </div>
+  <div class="col-md-7">
+    <div id="post-content">
+      <%= markdown @post.body %>
+    </div>
+  </div>
+</div>
 
 <%= render 'comments/comment' %>
 
