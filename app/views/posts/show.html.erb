@@ -5,6 +5,8 @@
   <%= @post.title %>
 </p>
 
+<p> <strong>Created by:</strong><%= @post.user.email %> - <%= @post.created_at.strftime('%d/%m/%Y')%></p>
+
 <p>
   <strong>BODY:</strong>
   <%= markdown @post.body %>
@@ -14,7 +16,6 @@
   <strong>TAGS:</strong>
   <%= @post.tag_list.join(' ').upcase %>
 </p>
-
 
 <%= render 'comments/comment' %>
 
