@@ -9,6 +9,8 @@
   <%= f.text_area :body, class:"form-control" %> 
 </div>
 <div class="form-group">
-  <%= f.submit class:"btn btn-primary" %> 
+ <% if user_signed_in? %>
+  <%= f.submit class:"btn btn-primary" %>
+  <% end %>
 </div> 
 <% end %> 
