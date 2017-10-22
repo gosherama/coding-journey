@@ -4,7 +4,9 @@
   <% end %>
 </div>
 <br>
-  <%= link_to 'New Post', new_post_path, class:"btn btn-primary" %>
+ <% if user_signed_in? %>
+    <%= link_to 'New Post', new_post_path, class:"btn btn-primary" %>
+  <% end %>
 <br>
 
 <br>
@@ -27,7 +29,7 @@
         <td><%= post.id %></td>
         <td><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ').upcase %></td>
         <td><%= post.title %></td>
-        <td><%= markdown truncate(post.body,length: 300) %></td>
+        <td id="index-post-content"><%= markdown truncate(post.body,length: 100) %></td>
         <td><%= post.created_at.strftime('%d/%m/%Y') %></td>
         <td><%= link_to 'Show', post, class:"btn btn-primary" %></td>
           <% if user_signed_in? %>
