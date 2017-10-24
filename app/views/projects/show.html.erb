@@ -9,17 +9,13 @@
     <div class="project-techno">
       <%= image_tag("techno.png")%><%= @project.techno %>  
     </div>
-    <div id="project_git">
-      <%= image_tag("github-logo.png")%> <%= link_to "Git repo", @project.git %>  
-    </div>
-    <div id="project-www">
-      <%= image_tag("web.png")%> <%= link_to "website", @project.website %>  
-    </div>
+    <div id="project_git" id="project-www">
+      <%= link_to image_tag("github-logo.png"), @project.git %><%= link_to image_tag("web.png"), @project.website %></div>
   </div>
   <div class="col-md-8">
    <div id="project-content">
-    <%= image_tag("menu.png") %>
-     <%= markdown @project.body %>
+      <%= image_tag("menu.png") %>
+      <%= markdown @project.body %>
    </div>
   </div>
 </div>
