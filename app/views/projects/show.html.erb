@@ -1,24 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+<div class="row">
+  <div class="col-md-4">
+    <p id="title"><%= @project.title %></p>
+    <div id="project_img">
+      <%= image_tag @project.project_img.url(:thumb) %>  
+    </div>
+    <div class="project-techno">
+      <%= image_tag("techno.png")%><%= @project.techno %>  
+    </div>
+    <div id="project_git">
+      <%= image_tag("github-logo.png")%> <%= link_to "Git repo", @project.git %>  
+    </div>
+    <div id="project-www">
+      <%= image_tag("web.png")%> <%= link_to "website", @project.website %>  
+    </div>
+  </div>
+  <div class="col-md-8">
+   <div id="project-content">
+    <%= image_tag("menu.png") %>
+     <%= markdown @project.body %>
+   </div>
+  </div>
+</div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @project.body %>
-</p>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_project_path(@project) %>
+<% end %>
 
-<p>
-  <strong>Main img:</strong>
-  <%= @project.main_img %>
-</p>
-<p>
-  <strong>Project Image:</strong>
-  <%= image_tag @project.project_img.url(:thumb) %>
-</p>
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

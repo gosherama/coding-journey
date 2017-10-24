@@ -1,3 +1,64 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//-----Project Index page styling-----//
+#index-title {
+  text-transform: uppercase;
+  font-weight:bold;
+  padding-bottom: 15px;
+}
+#index-project-title {
+  padding-top:25px;
+  padding-bottom: 15px;
+  font-size:1.5em;
+  text-transform: capitalize;
+}
+#index-project-img img {
+  width:300px;
+  height: 250px;
+  padding-bottom: 15px;
+}
+
+
+//----Project Show page styling ----//
+#title {
+  text-transform: uppercase;
+  font-weight:bold;
+  font-size: 1.5em;
+}
+
+#project_img img {
+  width: 300px;
+  height: 250px;
+  margin-bottom:15px;
+}
+
+#project-content {
+  border-left: 7px solid #FFC104;
+  margin-left:20px;
+  padding-left: 20px;
+}
+#project-content img {
+  height:40px;
+  width: 40px;
+  margin-bottom: 15px;
+}
+
+.project-techno img {
+  height:40px;
+  width: 40px;
+  margin-bottom: 15px;
+}
+
+#project_git img {
+  height:40px;
+  width: 40px;
+  margin-bottom: 15px;
+}
+#project-www img {
+  height:40px;
+  width: 40px;
+  margin-bottom: 15px;
+}
