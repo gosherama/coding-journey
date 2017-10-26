@@ -4,6 +4,17 @@
 
 
 //-----Project Index page styling-----//
+.project-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.project {
+  width: 32%;
+  margin: 5px;
+}
+
 #index-title {
   text-transform: uppercase;
   font-weight:bold;
@@ -11,14 +22,17 @@
 }
 #index-project-title {
   padding-top:25px;
-  padding-bottom: 15px;
+  padding-bottom: 8px;
   font-size:1.5em;
   text-transform: capitalize;
 }
+#project-create-date-index {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
 #index-project-img img {
-  width:300px;
-  height: 250px;
-  padding-bottom: 15px;
+ width: 100%;
+margin-bottom: 7px;
 }
 
 
@@ -26,13 +40,18 @@
 #title {
   text-transform: uppercase;
   font-weight:bold;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  margin-bottom: 10px;
 }
 
 #project_img img {
   width: 300px;
   height: 250px;
   margin-bottom:15px;
+}
+#project-create-date {
+  font-size: 1em;
+  margin-bottom: 15px;
 }
 
 #project-content {

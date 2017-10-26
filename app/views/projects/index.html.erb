@@ -7,12 +7,16 @@
 <% end %>
 
 
-  <div class="row">
+  <div class="project-container">
    <% @projects.each do |project| %>
-    <div class="col-md-4">
+    <div class="project">
        <div id="index-project-title">
          <%= project.title %>
        </div>
+       <div id="project-create-date-index">
+         Created: <%= project.created_at.strftime('%d/%m/%Y')%>
+       </div>
+       
         <div id="index-project-img">
           <%= image_tag project.project_img.url(:thumb) %>
         </div>

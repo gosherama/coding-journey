@@ -3,6 +3,7 @@
 <div class="row">
   <div class="col-md-4">
     <p id="title"><%= @project.title %></p>
+    <h3 id="project-create-date">Created: <%= @project.created_at.strftime('%d/%m/%Y') %></h3>
     <div id="project_img">
       <%= image_tag @project.project_img.url(:thumb) %>  
     </div>
@@ -21,7 +22,7 @@
 </div>
 
 <% if user_signed_in? %>
-  <%= link_to 'Edit', edit_project_path(@project) %>
+  <%= link_to 'Edit', edit_project_path(@project), class:"btn btn-primary btn-sm" %>
 <% end %>
 
-<%= link_to 'Back', projects_path %>
+<%= link_to 'Back', projects_path, class:"btn btn-warning btn-sm" %>
