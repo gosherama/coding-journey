@@ -18,6 +18,7 @@
       <th>Tags</th>
       <th>Title</th>
       <th>Content</th>
+      <th>Project</th>
       <th>Created</th>
       <th colspan="3" class="text-center">Actions</th>
     </tr>
@@ -30,6 +31,7 @@
         <td><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ').upcase %></td>
         <td><%= post.title %></td>
         <td id="index-post-content"><%= markdown truncate(post.body,length: 100) %></td>
+        <td><%= post.project %></td>
         <td><%= post.created_at.strftime('%d/%m/%Y') %></td>
         <td><%= link_to 'Show', post, class:"btn btn-primary" %></td>
           <% if user_signed_in? %>

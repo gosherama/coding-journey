@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+//-----Project form--------------------//
+textarea#project_body.form-control {
+  height:150px;
+}
 
 //-----Project Index page styling-----//
 .project-container {
@@ -12,7 +16,13 @@
 
 .project {
   width: 32%;
-  margin: 5px;
+  margin: 7px;
+  padding:8px;
+  background-color: #ffc107;
+  opacity:0.8;
+}
+.project:nth-child(odd) {
+  background-color: #4db6ac;
 }
 
 #index-title {
@@ -21,7 +31,7 @@
   padding-bottom: 15px;
 }
 #index-project-title {
-  padding-top:25px;
+  padding-top:10px;
   padding-bottom: 8px;
   font-size:1.5em;
   text-transform: capitalize;
