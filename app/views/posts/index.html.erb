@@ -8,41 +8,29 @@
     <%= link_to 'New Post', new_post_path, class:"btn btn-primary" %>
   <% end %>
 <br>
-
 <br>
 <br>
-<table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>id</th>
-      <th>Tags</th>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Project</th>
-      <th>Created</th>
-      <th colspan="3" class="text-center">Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.id %></td>
-        <td><%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(' ').upcase %></td>
-        <td><%= post.title %></td>
-        <td id="index-post-content"><%= markdown truncate(post.body,length: 100) %></td>
-        <td><%= post.project %></td>
-        <td><%= post.created_at.strftime('%d/%m/%Y') %></td>
-        <td><%= link_to 'Show', post, class:"btn btn-primary" %></td>
-          <% if user_signed_in? %>
-            <% if current_user.id === post.user_id %>
-              <td><%= link_to 'Edit', edit_post_path(post), class:"btn btn-warning" %></td>
-              <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
-            <% end %>
-          <% end %>
-      </tr>
+<% @posts.each do |post| %>
+  <div class = "row">
+    <div class="col-md-4">
+        <h2> <%= post.title %> </h2>
+        <h3 id="post-author"><%= image_tag("user.png")%><%= post.user.email %></h3>
+        <h3 id="post-date"><%= image_tag("clock.png")%><%= post.created_at.strftime('%d/%m/%Y')%></h3>
+        <h3 id="tags"><%= image_tag("settings.png")%><%= post.tag_list.join(' ').upcase %></h3>
+        <h3 id="post-project-img"><%= image_tag("idea.png") %><%= post.project %></h3>
+    </div>
+    <div class="col-md-8">
+    <p id="index-post-content"> <%= markdown truncate(post.body,length: 200) %> </p>
+    <%= link_to 'Show', post, class:"btn btn-primary btn-sm" %>
+    <% if user_signed_in? %>
+      <% if current_user.id === post.user_id %>
+        <%= link_to 'Edit', edit_post_path(post), class:"btn btn-warning btn-sm" %>
+        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm" %>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+    </div>
+  </div>
+  <br />
+<% end %>
 
 <%= will_paginate @posts %>
