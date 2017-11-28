@@ -6,10 +6,10 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if params[:tag]
-      @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page],:per_page => 3)
+      @posts = Post.tagged_with(params[:tag]).paginate(:page => params[:page],:per_page => 3).order('created_at DESC')
     else
       #@posts = Post.all.order('created_at DESC')
-      @posts = Post.paginate(:page => params[:page], :per_page => 3)
+      @posts = Post.paginate(:page => params[:page], :per_page => 3).ordre('created_at DESC')
     end
   end
 
