@@ -5,32 +5,42 @@
 </div>
 <br>
  <% if user_signed_in? %>
-    <%= link_to 'New Post', new_post_path, class:"btn btn-primary" %>
+    <%= link_to 'New Post', new_post_path, class:"btn btn-primary btn-sm" %>
   <% end %>
 <br>
 <br>
-<br>
+
 <% @posts.each do |post| %>
   <div class = "row">
-    <div class="col-md-4">
-        <h2> <%= post.title %> </h2>
-        <h3 id="post-author"><%= image_tag("user.png")%><%= post.user.email %></h3>
-        <h3 id="post-date"><%= image_tag("clock.png")%><%= post.created_at.strftime('%d/%m/%Y')%></h3>
-        <h3 id="tags"><%= image_tag("settings.png")%><%= post.tag_list.join(' ').upcase %></h3>
-        <h3 id="post-project-img"><%= image_tag("idea.png") %><%= post.project %></h3>
-    </div>
     <div class="col-md-8">
-    <p id="index-post-content"> <%= markdown truncate(post.body,length: 200) %> </p>
-    <%= link_to 'Show', post, class:"btn btn-primary btn-sm" %>
-    <% if user_signed_in? %>
-      <% if current_user.id === post.user_id %>
-        <%= link_to 'Edit', edit_post_path(post), class:"btn btn-warning btn-sm" %>
-        <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm" %>
-      <% end %>
-    <% end %>
+      <h2> <%= post.title %> </h2>
     </div>
+    <div class="col-md-8 flex-icon">
+      <h3 id="post-author"><%= image_tag("user.png") %><%= post.user.email %>
+      <h3 id="post-date" ><%= image_tag("clock.png") %><%= post.created_at.strftime('%d/%m/%Y') %>
+    </div>
+    <div class="col-md-10">
+      <p id="index-post-content"> <%= markdown truncate(post.body,length: 400) %> </p>
+    </div>
+    <div class="col-md-10 btn-control">
+    <%= link_to 'Show', post, class:"btn btn-primary btn-sm", id:"show-btn" %>
+      <% if user_signed_in? %>
+        <% if current_user.id === post.user_id %>
+          <%= link_to 'Edit', edit_post_path(post), class:"btn btn-warning btn-sm", id:"edit-btn"%>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger btn-sm" %>
+        <% end %>
+      <% end %>
+    </div>
+    <hr class="content-separation"/>
+    <div class="col-md-8 bio-icons">
+      <h3 id="tags"><%= image_tag("settings.png")%><%= post.tag_list.join(' ').upcase %></h3>
+    </div>
+    <div class="col-md-8 bio-icons">
+      <h3 id="post-project-img"><%= image_tag("idea.png") %><%= post.project %></h3>
   </div>
-  <br />
+    <br />
+    <br />
+  </div>
 <% end %>
 
 <%= will_paginate @posts %>
